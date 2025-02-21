@@ -1,0 +1,51 @@
+Creating a chat application
+
+socket.io
+a web sockets package built for low latency real time communication
+
+HTTP 
+- one way communication - clients-> server-> ends on the clients
+- slow (>1-2 seconds)
+- its not continuous 
+- auto-reconnection 
+- no notifications 
+
+
+Faster Communication 
+
+socket.io web sockets 
+
+upgrade the connection
+http------> socket.io 
+
+
+Methods
+-> emit
+-> recieve (on)
+-> forward
+-> broadcast -> to send message to everyone except yourself 
+-> add users to groups 
+-> send messages to groups/users
+-> logout successfully 
+
+
+HTTP                Socket
+2-3 seconds         10-20ms 
+header size         800+ bytes 
+5-10 bytes          stream compressed 
+messages        
+are compressed
+
+
+sockets are built on TOP of http 
+
+1> set up HTTP 
+2>createServer that is secure through the http layers  
+3>HTTP handshake 
+ 
+
+
+>Server (Back End)
+
+
+>Client (Front End)
