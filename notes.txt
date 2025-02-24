@@ -49,3 +49,14 @@ sockets are built on TOP of http
 
 
 >Client (Front End)
+
+
+
+Bidirectional Communication 
+
+Client <-> Server <-> Client 2 
+
+Client 1-> Client 2
+
+Client 1 - > Server
+Server -> Client 2

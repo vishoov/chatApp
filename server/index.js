@@ -43,6 +43,23 @@ const io = new socket.Server(httpserver, {
 //socket documentation 
 io.on("connection", (socket)=>{
     console.log("New Connection");
+
+    socket.on("message", (data)=>{
+        console.log(data);
+        // io.emit("forward", data);
+        socket.to(data.reciever).emit("forward", data.message);
+        //socket.to(reciever) -> is a prebuikt socket.io method that allows
+        //us to send message to a specific user that we want to send the message to
+    })
+
+    socket.on("joinRoom", (room)=>{
+        //if there exists a room with the room name, the client will be added to that
+        //if the room doesnt exist
+        //a new room will be created and the client will be added to that room
+        socket.join(room);
+        console.log(`${socket.id} Joined room ${room}`);
+    })
+
 })
 
 
@@ -52,23 +69,6 @@ io.on("connection", (socket)=>{
 
 //Cross Origin Resource Sharing (CORS) is a security feature that restricts what resources a web page can request from another domain.
 //The CORS policy is enforced by the browser.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
